@@ -16,14 +16,16 @@ const projects = [
     techStack: [
       "React",
       "Tailwind CSS",
-      "Node.js",
+      "Java",
       "Spring Boot",
-      "MongoDB",
-      "Supabase",
-      "TalkJS",
-      "ML Models",
+      "MySQL",
+      "Python",
+      "Flask",
+      "Machine Learning",
     ],
     featured: true,
+    liveUrl: "https://legalhelp.dev",
+    githubUrl: "https://github.com/ankitraj0901",
   },
   {
     title: "CNN Image Classifier",
@@ -38,6 +40,7 @@ const projects = [
     ],
     techStack: ["TensorFlow", "Python", "Keras", "NumPy", "Matplotlib"],
     featured: false,
+    githubUrl: "https://github.com/ankitraj0901",
   },
   {
     title: "Financial Prediction Model",
@@ -52,6 +55,7 @@ const projects = [
     ],
     techStack: ["Python", "Scikit-learn", "Pandas", "TensorFlow"],
     featured: false,
+    githubUrl: "https://github.com/ankitraj0901",
   },
 ];
 
@@ -122,6 +126,30 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                {/* Links */}
+                <div className="flex gap-4 mt-8">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-accent-foreground rounded-xl font-semibold hover:opacity-90 transition"
+                    >
+                      Live Project <ExternalLink size={16} />
+                    </a>
+                  )}
+
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-foreground/15 rounded-xl font-semibold hover:bg-primary-foreground/25 transition"
+                    >
+                      GitHub <Github size={16} />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -169,6 +197,14 @@ const Projects = () => {
                     </span>
                   ))}
                 </div>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-accent hover:underline"
+                >
+                  View on GitHub <Github size={16} />
+                </a>
               </div>
             ))}
         </div>
